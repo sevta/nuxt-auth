@@ -43,6 +43,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
   ],
+
+  axios: {
+    https: true,
+  },
+
   auth: {
     strategies: {
       local: {
