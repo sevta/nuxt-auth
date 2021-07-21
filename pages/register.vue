@@ -84,7 +84,7 @@ export default {
         }
         console.log('auth', this.$auth.user)
       } catch (error) {
-        console.log(error)
+        console.log(error.message)
       }
     },
   },

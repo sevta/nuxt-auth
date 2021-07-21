@@ -2,6 +2,7 @@ const express = require('express')
 const config = require('./config')
 const app = express()
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -18,6 +19,7 @@ const User = require('./models/User')
  */
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(cors())
 
 /**
  * routes api
