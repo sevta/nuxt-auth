@@ -42,10 +42,19 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    '@nuxtjs/proxy',
   ],
 
   axios: {
     https: true,
+    proxy: true,
+  },
+
+  proxy: {
+    '/api/': {
+      target: 'https://nuxt-auth-mu.vercel.app',
+      pathRewrite: { '^/api/': '' },
+    },
   },
 
   auth: {
